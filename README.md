@@ -49,4 +49,4 @@ Example beginning of output file:
 In addition to the above the program outputs some stats to help evaluate the solution
 
 
-The alpine_scheduler is based on previous work by Lyndon Emsley, Nicolas Giraud and Albert Hoftstetter.
+#### The alpine_scheduler is based on previous work by Lyndon Emsley, Nicolas Giraud and Albert Hoftstetter.
