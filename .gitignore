@@ -1,0 +1,4 @@
+.DS_Store
+alpine_scheduler
+results*
+*.dSYM
