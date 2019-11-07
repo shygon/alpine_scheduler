@@ -1,3 +1,4 @@
+
 # alpine_scheduler
 
 Creating a schedule for a round tables event based on participants preferences. First written and  used for the Alpine Conference on Magnetic Resonance in Solids 2019.
@@ -8,7 +9,12 @@ The scenario involves N<sub>P</sub> participants, N<sub>A</sub> of which present
 
 Ahead of the scheduling, participants preferences should be gathered and they are passed to the program as input. The program then tries to find a solution that tries to maximize participants' happiness based on their preferences using a "[Simulated Annealing](https://en.wikipedia.org/wiki/Simulated_annealing)" approach.
 
-The above preferences are a list of scores participants gave a few abstracts of their choosing. Scores can be a number between 1 and 5 ("star rating") given to, for example Ns abstracts that they choose as most interesting to them to hear about.
+The above preferences are a list of scores participants gave a few abstracts of their choosing. Scores can be a number between 1 and 5 ("star rating") given to, for example 20 abstracts that they choose as most interesting to them to hear about.
+
+## Constraints and Considerations
+- It's possible to configure maximum presentations per abstract so that no abstract is presented more than e.g. twice
+- It's possible to configure range of number of participations, so that each participant may participate in between 10 and 12 sessions - this depends on the number of sessions and capacity of the rooms. E.g. if there are 200 participants and 15 rooms of 10 people, then 150 of 200 people participate in each session and on average each person will participate in 75% of the sessions. for 16 sessions, it's possible to configure range of participations to be 11-13 or 10-14 etc.
+- In some cases people may not submit any rankings. In this case the algorithm will prefer to assign them to popular abstracts, otherwise such participants will end up attending all the least popular sessions - rather than all participant being distributed across unpopular sessions.
 
 ## Input
 
