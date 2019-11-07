@@ -48,5 +48,33 @@ Example beginning of output file:
 
 In addition to the above the program outputs some stats to help evaluate the solution
 
+## Program options:
+
+    -h [ --help ]                         Show help message and exit
+    -r [ --ranking_file ] arg             Rankings CSV file
+    --results_dir arg (=results)          Directory for saving results
+    -i [ --iterations ] arg (=100000)     Number of iterations
+    --init_temp arg (=10)                 Initial temperature
+    --final_temp arg (=1.0000000000000001e-05)
+                                          Final temperature
+    --timeslots arg (=18)                 Number of timeslots
+    --rooms arg (=9)                      Number of rooms
+    --room_size arg (=12)                 Room capacity including speaker
+    --person_id_col arg (=person_id)      Name of person_id column
+    --abstract_id_col arg (=abstract_id)  Name of abstract_id column
+    --score_col arg (=rating)             Name of score column
+    --input_delimiter arg (=,)            Delimiter character of input file
+    --default_score arg (=0)              Value of empty score
+    --max_score arg (=5)                  Minimum value for single score
+    --min_score arg (=0)                  Maximum value for single score
+    --score_delta arg (=1)                Delta added per score (to avoid 0
+                                          score)
+    --participation_range arg (=2)        Allowed deviation from mean number of
+                                          participations per person
+    --max_presentations arg (=3)          Max number of presentations per
+                                          abstract
+    --seed arg                            Algorithm random seed (for debugging)
+    -v [ --verbose ]                      Verbose mode (for debugging)
+
 
 #### The alpine_scheduler is based on previous work by Lyndon Emsley, Nicolas Giraud and Albert Hoftstetter.
