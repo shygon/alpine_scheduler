@@ -1,4 +1,5 @@
 .DS_Store
 alpine_scheduler
 results*
+!results/test
 *.dSYM
