@@ -1,4 +1,5 @@
 #include "scorer.hh"
+#include <algorithm>
 
 Score SumHappinessScorer::calcRoomScore(s32 timeslot, s32 room) {
   Score score = 0;

@@ -1,6 +1,7 @@
 #include "schedule.hh"
 
 #include <iomanip>
+#include <algorithm>
 
 using namespace std;
 
@@ -42,8 +43,8 @@ void Schedule::initState() {
   vector<ID> indexes(m_nAbstracts);
   for (size_t i = 0; i < indexes.size(); ++i)
     indexes[i] = i;
-  std::sort(indexes.begin(), indexes.end(),
-            [&](int i, int j) { return abstractScores[i] > abstractScores[j]; } );
+  sort(indexes.begin(), indexes.end(),
+       [&](int i, int j) { return abstractScores[i] > abstractScores[j]; } );
   for (size_t i = 0; i < indexes.size(); ++i) {
     if (i < 5 || i > indexes.size() - 5 - 1)
       dbg() << setw(3) << i << " i:" << setw(3) << indexes[i]

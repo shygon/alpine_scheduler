@@ -4,6 +4,7 @@
 #include <boost/algorithm/string.hpp>
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 
 #include "utils.hh"
 
