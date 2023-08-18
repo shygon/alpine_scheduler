@@ -191,6 +191,7 @@ public:
         ++abstractPresentations[abstractID];
         for (s32 s = 1; s < m_params.roomSize; ++s) {
           ID personID = sched.getID(t, r, s);
+          if (personID == INVALID_ID) continue;
           ++personParticipations[personID];
           if (getRankingOrig(personID, abstractID, m_params) > 0) {
             ++ratedAbstractsGotPerPerson[personID];
