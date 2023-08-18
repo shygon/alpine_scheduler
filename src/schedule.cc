@@ -106,7 +106,7 @@ bool Schedule::setIDIfLegal(s32 timeslot, s32 room, s32 seat, ID newID) {
       }
     }
     if (newIDValid) {
-      if (getAbstractCount(newID) >= m_params.maxPresentations) {
+      if (getAbstractCount(newID) >= static_cast<s32>(m_params.maxPresentations)) {
         return false;
       }
     }
@@ -116,12 +116,12 @@ bool Schedule::setIDIfLegal(s32 timeslot, s32 room, s32 seat, ID newID) {
       if (testPersonAbstractIfValid(newID, abstractID)){
         return false;
       }
-      if (getPersonCount(newID) >= m_params.maxParticipations) {
+      if (getPersonCount(newID) >= static_cast<s32>(m_params.maxParticipations)) {
         return false;
       }
     }
     if (oldIDValid) {
-      if (getPersonCount(oldID) <= m_params.minParticipations) {
+      if (getPersonCount(oldID) <= static_cast<s32>(m_params.minParticipations)) {
         return false;
       }
     }

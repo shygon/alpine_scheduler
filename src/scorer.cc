@@ -137,7 +137,7 @@ void MinHappinessBonusScorer::findMinPersonScore(Score& minScore, int& nPeople, 
   minScore = m_pointBonus * 1000;
   nPeople = 0;
   firstPersonID = INVALID_ID;
-  for (ID i=0; i < m_scorePerPerson.size(); ++i) {
+  for (ID i=0; i < static_cast<ID>(m_scorePerPerson.size()); ++i) {
     Score normalizedScore = m_scorePerPerson[i] / m_maxScorePerPerson[i];
     if (normalizedScore < minScore) {
       minScore = normalizedScore;

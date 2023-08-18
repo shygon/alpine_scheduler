@@ -75,13 +75,13 @@ bool normalizeRankings(Params& params) {
   }
 
   vector<ID> sortedAbstracts(params.nAbstracts);
-  for (ID i = 0; i < sortedAbstracts.size(); ++i) {
+  for (ID i = 0; i < static_cast<ID>(sortedAbstracts.size()); ++i) {
     sortedAbstracts[i] = i;
   }
   std::sort(begin(sortedAbstracts), end(sortedAbstracts),
             [&](int i1, int i2) { return abstractSumScores[i1] > abstractSumScores[i2]; });
   for (ID personID : peopleWithoutRankings) {
-    s32 iAbstract = 0;
+    size_t iAbstract = 0;
     Score sumScore = 0;
     for (Score s = params.maxScore; s >= params.minScore; --s) {
       for (s32 i=0; i < params.nTimeslots && iAbstract < sortedAbstracts.size(); ++i) {
@@ -145,9 +145,9 @@ bool translateOrigIDs(Params& params) {
   params.personIdToOrig.insert(end(params.personIdToOrig),
     begin(nonAbstractPeople), end(nonAbstractPeople));
 
-  for (ID id=0; id < params.personIdToOrig.size(); ++id)
+  for (ID id=0; id < static_cast<ID>(params.personIdToOrig.size()); ++id)
     params.personOrigIdToId[params.personIdToOrig[id]] = id;
-  for (ID id=0; id < params.abstractIdToOrig.size(); ++id)
+  for (ID id=0; id < static_cast<ID>(params.abstractIdToOrig.size()); ++id)
     params.abstractOrigIdToId[params.abstractIdToOrig[id]] = id;
 
   params.nPeople = params.personIdToOrig.size();

@@ -424,7 +424,7 @@ protected:
   }
 
   ostream& outputVectorCount(ostream& s, const vector<s32>& v, string countSuffix="") {
-    for (s32 i = 0; i < v.size(); ++i) {
+    for (size_t i = 0; i < v.size(); ++i) {
       if (v[i] > 0)
         s << " " << i << countSuffix << ":" << v[i];
     }

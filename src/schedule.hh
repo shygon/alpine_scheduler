@@ -51,6 +51,7 @@ public:
     bool res;
     res = setIDIfLegal(timeslot, room, seat, newID);
     ASSERT(res);
+    (void)res;
   }
   bool setIDIfLegal(s32 timeslot, s32 room, s32 seat, ID newID);
   void setIDUnsafe(s32 timeslot, s32 room, s32 seat, ID newID);

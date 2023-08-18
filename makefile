@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-Wall -std=c++11 -g -O3
 LDFLAGS=
-LDLIBS=-l boost_program_options -l boost_filesystem
+LDLIBS=-l boost_program_options -l boost_filesystem -lboost_system
 SOURCES = src/*.cc
 HEADERS = src/*.hh
 BINFILE = 
