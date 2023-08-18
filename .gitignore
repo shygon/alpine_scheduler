@@ -3,3 +3,4 @@ alpine_scheduler
 results*
 !results/test
 *.dSYM
+.vscode/
